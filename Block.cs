@@ -41,7 +41,7 @@ namespace FrostCoin
             return BitConverter.ToString(hashByte).Replace("-", "");
         }
 
-        //mining method
+        //mining method you can increase the difficulty in order to change how fast a mining reward is received
         public void Mine(int difficulty)
         {
             //the difficulty is the number of 0s, loop goes through until there are that many 0s in the hash
@@ -49,6 +49,7 @@ namespace FrostCoin
             {
                 this.Nonce++;
                 this.Hash = this.CalculateHash();
+                //this line is not necessary, it can be removed so that you dont see the printed hash each time its calculated
                 Console.WriteLine("Mining: " + this.Hash);
             }
 
