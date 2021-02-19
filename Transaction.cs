@@ -24,7 +24,7 @@ namespace FrostCoin
         }
 
         //signing the transaction
-        public void SignTransation(PrivateKey signingKey)
+        public void SignTransaction(PrivateKey signingKey)
         {
             string fromAddressDER = BitConverter.ToString(FromAddress.toDer()).Replace("-", "");
             string signingDER = BitConverter.ToString(signingKey.publicKey().toDer()).Replace("-", "");
